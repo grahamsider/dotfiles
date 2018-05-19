@@ -11,7 +11,8 @@ Dotfiles for my Arch Linux setup.
 ## Info
 
 - Window Manager: `i3-gaps`
-- Terminal: `compton`
+- Terminal: `st`
+- Compositor: `compton`
 - Text Editor: `neovim`
 - Bar: `polybar`
 - dmenu: `rofi`
