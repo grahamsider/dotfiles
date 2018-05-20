@@ -162,7 +162,7 @@ bindsym $mod+r mode "resize"
 ###############
 
 # Resize resolution
-exec --no-startup-id xrandr --output VGA-1 --mode 1920x1080
+# exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080
 
 # Set new windows to floating by default
 for_window [class="[.]*"] floating enable
@@ -177,6 +177,10 @@ smart_gaps on
 
 # Start compton in background as daemon process
 exec --no-startup-id compton --config /root/.config/compton.conf -b
+
+# Start NetworkManager
+exec --no-startup-id systemctl start dhcpcd.service
+exec --no-startup-id systemctl start NetworkManager.service
 
 # Setting background, creating wal pallette
 exec --no-startup-id wal -i "/root/Pictures/wash/"
