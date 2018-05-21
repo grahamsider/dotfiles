@@ -9,6 +9,6 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 sleep 0.1
 
 # Launch top bar
-polybar -c=/root/.config/polybar/config top &
+polybar -c=$HOME/.config/polybar/config top &
 
 # Done
