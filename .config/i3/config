@@ -13,7 +13,7 @@ font pango:Ubuntu Mono 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st
+bindsym $mod+Return exec st -f "Ubuntu Mono:pixelsize=14:antialias=true:autohint=true"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -189,7 +189,7 @@ exec --no-startup-id wal -i "$HOME/Pictures/wash/"
 exec_always --no-startup-id $HOME/.config/polybar/plaunch.sh
 
 # Starting terminal emulator
-exec --no-startup-id st
+exec --no-startup-id st -f "Ubuntu Mono:pixelsize=14:antialias=true:autohint=true"
 
 # Extra bindings
-bindsym $mod+p exec dolphin
+bindsym $mod+q exec dolphin
