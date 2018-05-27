@@ -1,6 +1,6 @@
-##################
+#================#
 # i3-gaps config #
-##################
+#================#
 
 # $mod = winKey
 set $mod Mod4
@@ -177,10 +177,6 @@ smart_gaps on
 
 # Start compton in background as daemon process
 exec --no-startup-id compton --config $HOME/.config/compton.conf -b
-
-# Start NetworkManager
-exec --no-startup-id systemctl start dhcpcd.service
-exec --no-startup-id systemctl start NetworkManager.service
 
 # Setting background, creating wal pallette
 exec --no-startup-id wal -i "$HOME/Pictures/wash/"
