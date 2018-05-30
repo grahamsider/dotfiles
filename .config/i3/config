@@ -184,7 +184,10 @@ exec --no-startup-id wal -i "$HOME/Pictures/wash/"
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/plaunch.sh
 
-# Starting terminal emulator
+# Start unclutter (unclutter-xfixes-git)
+exec --no-startup-id unclutter &
+
+# Start terminal emulator
 exec --no-startup-id st -f "Ubuntu Mono:pixelsize=14:antialias=true:autohint=true"
 
 #================#
