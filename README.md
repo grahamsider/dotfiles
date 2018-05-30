@@ -22,4 +22,4 @@ Other notable packages: `pywal`, `neofetch`
 
 Backgrounds can be found [here](https://imgur.com/a/0pe3o) and [here](https://imgur.com/a/XgYEs).
 
-Currently in the process of transferring from VM to physical
+Currently dual booting with Windows 10 on my laptop.
