@@ -4,13 +4,16 @@ Dotfiles for my Arch Linux setup.
 ## Screenshots
 
 ### Floating Configuration
-![Floating Windows](https://i.imgur.com/bCR83cf.jpg)
+![Floating Windows](https://i.imgur.com/TsBrwxJ.png)
+### Tiling Configuration
+![Tiling Windows](https://i.imgur.com/mZBL1lP.png)
 ### dmenu
-![dmenu](https://i.imgur.com/RTDbsYV.png)
+![dmenu](https://i.imgur.com/PtUCDtt.png)
 
 ## Info
 
 - Window Manager: `i3-gaps`
+- File Manager: `dolphin`
 - Terminal: `st`
 - Compositor: `compton`
 - Text Editor: `neovim`
