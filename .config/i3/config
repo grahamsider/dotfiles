@@ -194,6 +194,9 @@ exec --no-startup-id st -f "Ubuntu Mono:pixelsize=14:antialias=true:autohint=tru
 # Extra bindings #
 #================#
 
+# Open st as root
+bindsym $mod+Shift+Return exec rootst
+
 # Open file manager
 bindsym $mod+q exec dolphin
 
@@ -223,3 +226,5 @@ bindsym XF86AudioPrev exec playerctl previous
 # Keyboard backlight controls
 bindsym XF86KbdBrightnessUp exec_always /usr/local/bin/kb-light.py + 1
 bindsym XF86KbdBrightnessDown exec_always --no-startup-id /usr/local/bin/kb-light.py - 1
+
+
