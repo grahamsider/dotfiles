@@ -184,6 +184,13 @@ exec --no-startup-id wal -i "$HOME/Pictures/wash/"
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/plaunch.sh
 
+# Start dunst
+exec --no-startup-id dunst &
+
+# Start systray applets
+exec --no-startup-id nm-applet &
+exec --no-startup-id volumeicon &
+
 # Start unclutter (unclutter-xfixes-git)
 exec --no-startup-id unclutter &
 
