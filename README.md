@@ -3,6 +3,8 @@ Dotfiles for my Arch Linux setup.
 
 ## Screenshots
 
+### Startup
+![Startup](https://i.imgur.com/t0K7Wry.png)
 ### Floating Configuration
 ![Floating Windows](https://i.imgur.com/TsBrwxJ.png)
 ### Tiling Configuration
@@ -25,4 +27,4 @@ Other notable packages: `pywal`, `neofetch`
 
 Backgrounds can be found [here](https://imgur.com/a/0pe3o) and [here](https://imgur.com/a/XgYEs).
 
-Currently dual booting with Windows 10 on my laptop.
+Currently dual booting with Windows 10 on a Dell Inspiron 7559 - Intel i5-6300HQ - NVIDIA GTX 960M
