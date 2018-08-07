@@ -3,14 +3,14 @@ Dotfiles for my Arch Linux setup.
 
 ## Screenshots
 
-### Startup
-![Startup](https://i.imgur.com/t0K7Wry.png)
 ### Floating Configuration
-![Floating Windows](https://i.imgur.com/TsBrwxJ.png)
-### Tiling Configuration
-![Tiling Windows](https://i.imgur.com/mZBL1lP.png)
-### dmenu
-![dmenu](https://i.imgur.com/PtUCDtt.png)
+![Floating Windows](https://i.imgur.com/8t45srx.png)
+### dmenu (rofi)
+![dmenu](https://i.imgur.com/YOUv39Z.png)
+### Startup
+![startup](https://i.imgur.com/vvRgilA.png)
+### Clean
+![clean](https://i.imgur.com/9fqzspm.png)
 
 ## Info
 
