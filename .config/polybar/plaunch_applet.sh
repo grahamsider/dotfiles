@@ -9,10 +9,10 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 sleep 0.1
 
 # Set environment variable
-sed -i '11s/.*/export PBAR_APPLET=false/' $HOME/.bash_profile
+sed -i '11s/.*/export PBAR_APPLET=true/' $HOME/.bash_profile
 source $HOME/.bash_profile
 
 # Launch top bar
-polybar -c=$HOME/.config/polybar/config top &
+polybar -c=$HOME/.config/polybar/config_applet top &
 
 # Done

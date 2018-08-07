@@ -179,7 +179,7 @@ smart_gaps on
 exec --no-startup-id compton --config $HOME/.config/compton.conf -b
 
 # Setting background, creating wal pallette
-exec --no-startup-id wal -i "$HOME/Pictures/wash/"
+exec --no-startup-id wal -i "$HOME/Pictures/bg_curr/"
 
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/plaunch.sh
@@ -208,7 +208,10 @@ bindsym $mod+Shift+Return exec rootst
 bindsym $mod+q exec dolphin
 
 # Shuffle background and change color scheme via py-wal
-bindsym $mod+p exec wal -i "$HOME/Pictures/wash" 
+bindsym $mod+p exec wal -i "$HOME/Pictures/bg_curr/" 
+
+# Swap polybar config (for applet tray)
+bindsym $mod+t exec pbar_swap.sh
 
 ### Multimedia buttons ###
 

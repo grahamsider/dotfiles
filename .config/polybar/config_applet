@@ -63,6 +63,17 @@ modules-left = i3
 modules-center = date
 modules-right = volume battery powermenu
 
+tray-position = left
+tray-detached = true
+tray-maxsize = 16
+tray-transparent = true
+tray-background = ${colors.background}
+tray-offset-x = 0
+tray-offset-y = 1050
+tray-padding = 4
+tray-scale = 1.0
+
+
 [bar/bottom]
 monitor = "eDP-1"
 locale = en_US.UTF-8
