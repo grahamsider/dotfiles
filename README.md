@@ -15,16 +15,18 @@ Dotfiles for my Arch Linux setup.
 ## Info
 
 - Window Manager: `i3-gaps`
-- File Manager: `dolphin`
+- File Manager: `ranger`/`dolphin`
 - Terminal: `st`
 - Compositor: `compton`
 - Text Editor: `neovim`
 - Bar: `polybar`
 - dmenu: `rofi`
 
-Other notable packages: `pywal`, `neofetch`
+Other notable packages: `pywal` for colorschemes
 (Check out [dylanaraps profile](https://github.com/dylanaraps). His setups have been a big inspiration for this!)
 
-Backgrounds can be found [here](https://imgur.com/a/0pe3o) and [here](https://imgur.com/a/XgYEs).
+Background(s) can be found [here](https://www.positrondream.com/wallpapers-all/).
+
+Check out my [bin repo](https://github.com/grahamsider/bin) for random small scripts I've made/am making to make my life easier.
 
 Currently dual booting with Windows 10 on a Dell Inspiron 7559 - Intel i5-6300HQ - NVIDIA GTX 960M
