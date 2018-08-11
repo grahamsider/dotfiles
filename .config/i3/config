@@ -13,7 +13,7 @@ font pango:Ubuntu Mono 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st -f "Ubuntu Mono:pixelsize=14:antialias=true:autohint=true"
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -195,7 +195,7 @@ exec --no-startup-id volumeicon &
 exec --no-startup-id unclutter &
 
 # Start terminal emulator
-exec --no-startup-id st -f "Ubuntu Mono:pixelsize=14:antialias=true:autohint=true"
+exec --no-startup-id st
 
 #================#
 # Extra bindings #
