@@ -3,4 +3,8 @@
 #====================#
 
 # Import colorscheme from wal asynchronously
-(cat ~/.cache/wal/sequences &)
+(cat $HOME/.cache/wal/sequences &)
+
+# Aliases
+alias r="ranger"
+alias wal_r="cat $HOME/.cache/wal/sequences &"
