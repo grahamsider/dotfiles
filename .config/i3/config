@@ -197,6 +197,9 @@ exec --no-startup-id unclutter &
 # Start terminal emulator
 exec --no-startup-id st
 
+# Start xautolock
+exec xautolock -time 10 -locker /usr/local/bin/lock.sh
+
 #================#
 # Extra bindings #
 #================#
@@ -212,6 +215,9 @@ bindsym $mod+p exec wal -i "$HOME/Pictures/bg_curr/"
 
 # Swap polybar config (for applet tray)
 bindsym $mod+t exec pbar_swap.sh
+
+# Lock screen
+bindsym $mod+Escape exec lock.sh
 
 ### Multimedia buttons ###
 
