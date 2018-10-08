@@ -32,17 +32,17 @@ override-redirect = true
 monitor = "eDP-1"
 locale = en_US.UTF-8
 
-width = 100%
+width = 1900
 height = 30
 border-size = 0
 border-top-size = 0
-border-left-size = 0
+border-left-size = 20
 border-right-size = 0
 border-bottom-size = 0
 radius = 0
 line-size = 2
 spacing = 1
-offset-x = 0
+offset-x = 
 offset-y = 0
 padding-left = 0
 padding-right = 2
@@ -144,6 +144,7 @@ ws-icon-4 = 5;5
 ws-icon-5 = 6;6
 ws-icon-6 = 7;7
 ws-icon-7 = 8;8
+ws-icon-8 = 9;9
 ws-icon-default = 
 
 [module/mpd]
