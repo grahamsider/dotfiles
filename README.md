@@ -7,10 +7,10 @@ Dotfiles for my Arch Linux setup.
 ![Floating Windows](https://i.imgur.com/8t45srx.png)
 ### dmenu (rofi)
 ![dmenu](https://i.imgur.com/YOUv39Z.png)
-### Startup
-![startup](https://i.imgur.com/vvRgilA.png)
 ### Clean
 ![clean](https://i.imgur.com/9fqzspm.png)
+### Alternate Background
+![Alternate Background](https://i.imgur.com/XAj4KnG.png)
 
 ## Info
 
