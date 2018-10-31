@@ -205,7 +205,7 @@ exec xautolock -time 10 -locker /usr/local/bin/lock.sh
 #================#
 
 # Open st as root
-bindsym $mod+Shift+Return exec rootst
+bindsym $mod+Shift+Return exec st -e su root
 
 # Open file manager
 bindsym $mod+q exec dolphin

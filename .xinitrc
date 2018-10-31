@@ -41,7 +41,7 @@ fi
 # Start i3
 exec i3
 
-# Idk what this does
+# Set contents of RESOURCE_MANAGER via .Xresources
 xrdb ~/.Xresources
 
 # Set xrandr settings

@@ -6,5 +6,8 @@
 (cat $HOME/.cache/wal/sequences &)
 
 # Aliases
+alias rootst="st -e su root"
 alias r="ranger"
-alias wal_r="cat $HOME/.cache/wal/sequences &"
+alias walr="cat $HOME/.cache/wal/sequences &"
+alias localip="hostname -i"
+alias scs="systemctl status"
