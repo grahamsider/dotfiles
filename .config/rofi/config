@@ -6,7 +6,7 @@ rofi.color-normal: argb:00292d37, #ffffff, argb:00292d37, argb:00292d37, #17a086
 rofi.color-active: argb:00292d37, #ffffff, argb:00292d37, argb:00292d37, #ffffff
 rofi.color-urgent: argb:00292d37, #ffffff, argb:00292d37, argb:00292d37, #ffffff
 
-rofi.font: Ubuntu Mono 20
+rofi.font: Ubuntu Mono 35
 rofi.eh: 1
 rofi.line-margin: 18
 rofi.separator-style: solid
@@ -14,6 +14,6 @@ rofi.hide-scrollbar: true
 rofi.lines: 4
 rofi.columns: 1
 rofi.width: 100
-rofi.padding: 600
+rofi.padding: 1000
 rofi.bw: 0
 rofi.auto-select: true

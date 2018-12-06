@@ -1,5 +1,5 @@
 ! DPI/Font
-Xft.dpi: 96
+Xft.dpi: 168
 Xft.autohint: 0
 Xft.antialias: 1
 Xft.hinting: true

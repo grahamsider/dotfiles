@@ -36,7 +36,7 @@ locale = en_US.UTF-8
 ;width = 1900
 ;border-left-size = 20
 width = 100%
-height = 30
+height = 52
 border-size = 0
 border-top-size = 0
 border-left-size = 0
@@ -56,7 +56,7 @@ font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=10;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=10;3"
 font-4 = "FontAwesome:style=Regular:pixelsize=10;3"
 font-5 = "Wuncon Siji:style=Regular:pixelsize=10;3"
-dpi = 96
+dpi = 168
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -72,7 +72,7 @@ tray-maxsize = 16
 tray-transparent = true
 tray-background = ${colors.background}
 tray-offset-x = 0
-tray-offset-y = 1050
+tray-offset-y = 1950
 tray-padding = 4
 tray-scale = 1.0
 
@@ -90,7 +90,7 @@ font-0 = "Ubuntu Mono:pixelsize=14;3"
 font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=10;3"
 font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=10;3"
 font-5 = "Font Awesome 5 Brands:pixelsize=10;3"
-dpi = 96
+dpi = 168
 
 bottom = true
 background = ${colors.background}

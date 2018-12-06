@@ -198,7 +198,7 @@ exec --no-startup-id unclutter &
 exec --no-startup-id st
 
 # Start xautolock
-exec xautolock -time 10 -locker /usr/local/bin/lock.sh
+# exec xautolock -time 10 -locker /usr/local/bin/lock.sh
 
 #================#
 # Extra bindings #
@@ -217,7 +217,7 @@ bindsym $mod+p exec wal -i "$HOME/Pictures/bg_curr/"
 bindsym $mod+t exec pbar_swap.sh
 
 # Lock screen
-bindsym $mod+Escape exec lock.sh
+bindsym $mod+Escape exec glitchlock
 
 ### Multimedia buttons ###
 

@@ -4,16 +4,15 @@ Dotfiles for my Arch Linux setup.
 ## Screenshots
 
 ### Floating Configuration
-![Floating Windows](https://i.imgur.com/8t45srx.png)
+![Floating Windows](https://imgur.com/mKdQel9)
+### Tiling configuration
+![Tiling Windows](https://imgur.com/rCA5nZ2)
 ### dmenu (rofi)
-![dmenu](https://i.imgur.com/YOUv39Z.png)
-### Clean
-![clean](https://i.imgur.com/9fqzspm.png)
-### Alternate Background
-![Alternate Background](https://i.imgur.com/XAj4KnG.png)
+![dmenu](https://imgur.com/EqEacnE)
 
 ## Info
 
+- Shell: `bash`
 - Window Manager: `i3-gaps`
 - File Manager: `ranger`/`dolphin`
 - Terminal: `st`
@@ -21,12 +20,13 @@ Dotfiles for my Arch Linux setup.
 - Text Editor: `neovim`
 - Bar: `polybar`
 - dmenu: `rofi`
+- colorscheme: `pywal`
 
-Other notable packages: `pywal` for colorschemes
-(Check out [dylanaraps profile](https://github.com/dylanaraps). His setups have been a big inspiration for this!)
+Background(s) can be found [here](https://www.positrondream.com/wallpapers-all/) [1080p].
+Background in screenshots can be found [here](http://7-themes.com/data_images/out/20/6837617-low-poly.jpg) [3K].
 
-Background(s) can be found [here](https://www.positrondream.com/wallpapers-all/).
+Check out my [bin repo](https://github.com/grahamsider/bin) for random small scripts I've made/am in the process of making to make my life easier.
 
-Check out my [bin repo](https://github.com/grahamsider/bin) for random small scripts I've made/am making to make my life easier.
-
-Currently dual booting with Windows 10 on a Dell Inspiron 7559 - Intel i5-6300HQ - NVIDIA GTX 960M
+Current configurations:
+- Huawei Matebook X Pro - Intel i7-8550U @ 4.0GHz - NVIDIA MX150 - 16GB LPDDR3 @ 2133MHz - 512GB NVMe SSD
+- Dell Inspiron 7559 (Dual Booting with Windows 10) - Intel i5-6300HQ @ 2.3GHz - NVIDIA GTX 960M - 8GB DDR3L @ 1600MHz - 1TB Hybrid HDD @ 5400RPM
