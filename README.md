@@ -4,11 +4,11 @@ Dotfiles for my Arch Linux setup.
 ## Screenshots
 
 ### Floating Configuration
-![Floating Windows](https://imgur.com/mKdQel9)
+![Floating Windows](https://i.imgur.com/mKdQel9.png)
 ### Tiling configuration
-![Tiling Windows](https://imgur.com/rCA5nZ2)
+![Tiling Windows](https://i.imgur.com/rCA5nZ2.png)
 ### dmenu (rofi)
-![dmenu](https://imgur.com/EqEacnE)
+![dmenu](https://i.imgur.com/EqEacnE.png)
 
 ## Info
 
