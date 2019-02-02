@@ -1,15 +1,11 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer: 
 "       Amir Salihefendic — @amix3k
-"
-" Awesome_version:
-"       Get this config, nice color schemes and lots of plugins!
-"
-"       Install the awesome version from:
-"
-"           https://github.com/amix/vimrc
+" Modifications:
+"       Graham Sider — @grahamsider
 "
 " Sections:
+"    -> Plugins
 "    -> General
 "    -> VIM user interface
 "    -> Colors and Fonts
@@ -26,6 +22,26 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Specifies plugin directory
+call plug#begin('~/vim/plugged')
+
+" Plugins
+Plug 'https://github.com/morhetz/gruvbox.git'
+Plug 'https://github.com/scrooloose/nerdtree.git'
+Plug 'https://github.com/tpope/vim-eunuch.git'
+Plug 'https://github.com/tpope/vim-surround.git'
+Plug 'https://github.com/terryma/vim-multiple-cursors.git'
+Plug 'https://github.com/itchyny/lightline.vim.git'
+
+" Initializes plugin system
+call plug#end()
+
+" Plugin related settings
+map <C-o> :NERDTreeToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -129,8 +145,8 @@ if has("gui_macvim")
 endif
 
 
-" Add a bit extra margin to the left
-set foldcolumn=1
+" Add a bit extra margin to the left (removed)
+set foldcolumn=0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -144,10 +160,22 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
+" Fix background color erase for 256-color tmux/screen
+if &term =~ '256color'
+    set t_ut=
+endif
+
+" Colorscheme
 try
-    colorscheme desert
+    colorscheme gruvbox
 catch
 endtry
+
+" Use terminal background color over colorscheme
+augroup vimrc
+    autocmd!
+    autocmd ColorScheme * hi Normal ctermbg=none
+augroup end
 
 set background=dark
 
