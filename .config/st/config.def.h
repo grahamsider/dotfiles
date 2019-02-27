@@ -1,28 +1,27 @@
 /* See LICENSE file for copyright and license details. */
 
-/*
- *	Custom config changes:
- *
- *	Font:	    Ubuntu Mono
- *	Pixelsize:  14
- *	Borderpx:   10
- *
- *	Custom config patches:
- *
- *	st-copyurl-20180520-73f375a.diff
- *	st-scrollback-0.8.diff
- *	st-scrollback-mouse-0.8.diff
- *	st-scrollback-mouse-altscreen-0.8.diff
- *
- */
+    /*
+    *	Custom config changes:
+    *
+    *	Font:	    Ubuntu Mono
+    *	Pixelsize:  24
+    *	Borderpx:   18
+    *
+    *	Custom config patches:
+    *	
+    *	st-scrollback-20190122-3be4cf1.diff
+    *	st-scrollback-mouse-0.8.diff
+    *	st-scrollback-mouse-altscreen-20190131-e23acb9.diff
+    *
+    */
 
 /*
  * appearance
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Ubuntu Mono:pixelsize=14:antialias=true:autohint=true";
-static int borderpx = 10;
+static char *font = "Ubuntu Mono:pixelsize=24:antialias=true:autohint=true";
+static int borderpx = 18;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -97,6 +96,42 @@ char *termname = "st-256color";
  *	stty tabs
  */
 unsigned int tabspaces = 8;
+
+//  NORD COLORSCHEME BEGIN  //
+//const char *colorname[] = {
+//    "#3b4252", /*  0: nord1 */
+//    "#bf616a", /*  1: nord11 */
+//    "#a3be8c", /*  2: nord14 */
+//    "#ebcb8b", /*  3: nord13 */
+//    "#81a1c1", /*  4: nord9 */
+//    "#b48ead", /*  5: nord15 */
+//    "#88c0d0", /*  6: nord8 */
+//    "#e5e9f0", /*  7: nord5 */
+//    "#4c566a", /*  8: nord3 */
+//    "#bf616a", /*  9: nord11 */
+//    "#a3be8c", /* 10: nord14 */
+//    "#ebcb8b", /* 11: nord3 */
+//    "#81a1c1", /* 12: nord9 */
+//    "#b48ead", /* 13: nord15 */
+//    "#8fbcbb", /* 14: nord7 */
+//    "#eceff4", /* 15: nord6 */
+//    [255] = 0,
+//    // defaults
+//    [256] = "#d8dee9", /* 256: nord4 */
+//    [257] = "#2e3440", /* 257: nord0 */
+//};
+//
+///*
+//* Default colors (colorname index)
+//* foreground, background, cursor, reverse
+//* cursor
+//*/
+//unsigned int defaultfg = 256; /* nord4 */
+//unsigned int defaultbg = 257; /* nord0 */
+//unsigned int defaultcs = 256; /* nord4 */
+//unsigned int defaultrcs = 8;  /* nord3 */
+//  NORD COLORSCHEME END  //
+
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -198,9 +233,10 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
+	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ TERMMOD,              XK_I,           iso14755,       {.i =  0} },
-	{ MODKEY,               XK_l,           copyurl,        {.i =  0} },
+	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 };
 
 /*
