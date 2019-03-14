@@ -46,9 +46,17 @@ Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 call plug#end()
 
 " Plugin related settings
-map <C-o> :NERDTreeToggle<CR>
+noremap <C-o> :NERDTreeToggle<CR>
+noremap <C-p> :call YCMToggle()<CR>
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+
+" Hacky way to turn YCM on/off on the fly
+function! YCMToggle()
+    let x = b:ycm_largefile
+    let b:ycm_largefile = (x == 0) ? 1 : 0
+    echo (x == 0) ? ':YCMOff' : ':YCMOn'
+endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -370,21 +378,20 @@ map <leader>q :e ~/buffer<cr>
 map <leader>x :e ~/buffer.md<cr>
 
 " Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
+map <leader>tp :setlocal paste!<cr>
 
 " Remap clipboard to xclip functions
 vnoremap <silent> "+y y:call ClipboardYank()<cr>
 vnoremap <silent> "*y y:call ClipboardYank()<cr>
-"vnoremap <leader>y y:call ClipboardYank()<cr>
+vnoremap <silent> <leader>y y:call ClipboardYank()<cr>
 
 vnoremap <silent> "+d d:call ClipboardYank()<cr>
 vnoremap <silent> "*d d:call ClipboardYank()<cr>
-"vnoremap <leader>d d:call ClipboardYank()<cr>
+vnoremap <silent> <leader>d d:call ClipboardYank()<cr>
 
 vnoremap <silent> "+p p:call ClipboardPaste()<cr>p
 vnoremap <silent> "*p p:call ClipboardPaste()<cr>p
-"vnoremap <leader>p p:call ClipboardYank()<cr>
-
+vnoremap <silent> <leader>p p:call ClipboardPaste()<cr>p
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
