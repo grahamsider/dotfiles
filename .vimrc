@@ -1,5 +1,5 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: 
+" Maintainer:
 "       Amir Salihefendic — @amix3k
 " Modifications:
 "       Graham Sider — @grahamsider
@@ -27,7 +27,7 @@
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Specifies plugin directory
-call plug#begin('~/vim/plugged')
+call plug#begin('~/.vim/plugged')
 
 " Plugins
 Plug 'https://github.com/morhetz/gruvbox.git'
@@ -36,12 +36,19 @@ Plug 'https://github.com/tpope/vim-eunuch.git'
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/terryma/vim-multiple-cursors.git'
 Plug 'https://github.com/itchyny/lightline.vim.git'
+Plug 'https://github.com/lervag/vimtex.git'
+Plug 'https://github.com/tpope/vim-commentary.git'
+Plug 'https://github.com/junegunn/fzf.vim.git'
+Plug 'https://github.com/Valloric/YouCompleteMe.git'
+Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 
 " Initializes plugin system
 call plug#end()
 
 " Plugin related settings
 map <C-o> :NERDTreeToggle<CR>
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -62,11 +69,12 @@ set autoread
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
+let maplocalleader = ";"
 
 " Fast saving
 nmap <leader>w :w!<cr>
 
-" :W sudo saves the file 
+" :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
 
@@ -81,7 +89,7 @@ set t_kb=
 set so=7
 
 " Avoid garbled characters in Chinese language windows OS
-let $LANG='en' 
+let $LANG='en'
 set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
@@ -113,23 +121,23 @@ set whichwrap+=<,>,h,l
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
 set hlsearch
 
 " Makes search act like search in modern browsers
-set incsearch 
+set incsearch
 
 " Don't redraw while executing macros (good performance config)
-set lazyredraw 
+set lazyredraw
 
 " For regular expressions turn magic on
 set magic
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -153,7 +161,7 @@ set foldcolumn=0
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
-syntax enable 
+syntax enable
 
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
@@ -263,8 +271,8 @@ map <leader>h :bprevious<cr>
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
+map <leader>tm :tabmove
+map <leader>t<leader> :tabnext
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
@@ -279,7 +287,7 @@ map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-" Specify the behavior when switching between buffers 
+" Specify the behavior when switching between buffers
 try
   set switchbuf=useopen,usetab,newtab
   set stal=2
@@ -328,6 +336,9 @@ fun! CleanExtraSpaces()
     call setreg('/', old_query)
 endfun
 
+" Remap exit term mode to escape
+tnoremap <ESC> <C-\><C-N>
+
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
@@ -360,6 +371,20 @@ map <leader>x :e ~/buffer.md<cr>
 
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
+
+" Remap clipboard to xclip functions
+vnoremap <silent> "+y y:call ClipboardYank()<cr>
+vnoremap <silent> "*y y:call ClipboardYank()<cr>
+"vnoremap <leader>y y:call ClipboardYank()<cr>
+
+vnoremap <silent> "+d d:call ClipboardYank()<cr>
+vnoremap <silent> "*d d:call ClipboardYank()<cr>
+"vnoremap <leader>d d:call ClipboardYank()<cr>
+
+vnoremap <silent> "+p p:call ClipboardPaste()<cr>p
+vnoremap <silent> "*p p:call ClipboardPaste()<cr>p
+"vnoremap <leader>p p:call ClipboardYank()<cr>
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -396,7 +421,7 @@ endfunction
 
 function! CmdLine(str)
     call feedkeys(":" . a:str)
-endfunction 
+endfunction
 
 function! VisualSelection(direction, extra_filter) range
     let l:saved_reg = @"
@@ -413,4 +438,13 @@ function! VisualSelection(direction, extra_filter) range
 
     let @/ = l:pattern
     let @" = l:saved_reg
+endfunction
+
+" Copy/paste to/from X clipboard buffer
+function! ClipboardYank()
+    call system('xclip -i -selection clipboard', @@)
+endfunction
+
+function! ClipboardPaste()
+    let @@ = system('xclip -o -selection clipboard')
 endfunction
