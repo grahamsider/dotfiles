@@ -10,6 +10,20 @@ alias vi="nvim"
 alias vim="nvim"
 
 # Git
+alias gs='git status'
+alias gc='git commit'
+alias ga='git add'
+alias gd='git diff'
+alias gb='git branch'
+alias gl='git log'
+alias gsb='git show-branch'
+alias gco='git checkout'
+alias gg='git grep'
+alias gk='gitk --all'
+alias gr='git rebase'
+alias gri='git rebase --interactive'
+alias gcp='git cherry-pick'
+alias grm='git rm'
 alias glola='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --all'
 
 # Curl
