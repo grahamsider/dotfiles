@@ -23,16 +23,12 @@ alias q="qutebrowser"
 alias qp="qutebrowser --temp-basedir -s content.private_browsing true" # Private Window
 eval $(thefuck --alias)
 
-alias rootst="st -e su root"
-alias rst="rootst"
-
 alias cat="bat" # Use \cat for regular cat
 
 alias psg="ps -ef | grep"
 alias walr="cat $HOME/.cache/wal/sequences &"
 alias localip="hostname -i"
 alias scs="systemctl status"
-alias kto="sudo python3 $HOME/PenTests/kickthemout/kickthemout.py"
 
 alias calnext="notify-send -u normal -t 10000 -a calcurse \"[Calcurse]\" \"$(calcurse --next)\""
 alias calall="notify-send -u normal -t 10000 -a calcurse \"[Calcurse] Appointments:\"  \"$(calcurse -a)\""
@@ -50,10 +46,6 @@ PATH=$PATH:$HOME/.local/bin
 
 # Set default editor (Nvim)
 EDITOR='nvim'
-
-# Define Qsys variables (Quartus Platform Designer)
-export QSYS_ROOTDIR="/home/gs/.cache/yay/quartus-free/pkg/quartus-free/opt/altera/18.1/quartus/sopc_builder/bin"
-export QSYS_FONTSIZE=20
 
 ## Other ##
 

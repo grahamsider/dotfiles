@@ -39,7 +39,7 @@ Plug 'https://github.com/itchyny/lightline.vim.git'
 Plug 'https://github.com/lervag/vimtex.git'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'https://github.com/junegunn/fzf.vim.git'
-Plug 'https://github.com/Valloric/YouCompleteMe.git'
+" Plug 'https://github.com/Valloric/YouCompleteMe.git'
 Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 
 " Initializes plugin system
@@ -47,16 +47,18 @@ call plug#end()
 
 " Plugin related settings
 noremap <C-o> :NERDTreeToggle<CR>
-noremap <C-p> :call YCMToggle()<CR>
+" noremap <C-p> :call YCMSemanticToggle()<CR>
+
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+" let g:ycm_show_diagnostics_ui = 0
 
-" Hacky way to turn YCM on/off on the fly
-function! YCMToggle()
-    let x = b:ycm_largefile
-    let b:ycm_largefile = (x == 0) ? 1 : 0
-    echo (x == 0) ? ':YCMOff' : ':YCMOn'
-endfunction
+" Turn YCM semantics on/off on the fly (hack)
+" function! YCMSemanticToggle()
+"     let x = b:ycm_largefile
+"     let b:ycm_largefile = (x == 0) ? 1 : 0
+"     echo (x == 0) ? ':YCMOff' : ':YCMOn'
+" endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -66,6 +68,12 @@ set history=500
 
 " Enable line numbers on left
 set number
+
+" Enable relative line numbers
+set relativenumber
+
+" Hotkey for switching relative/normal numbers
+nmap <C-t> :set invrelativenumber<CR>
 
 " Enable filetype plugins
 filetype plugin on
@@ -397,6 +405,15 @@ vnoremap <silent> <leader>p p:call ClipboardPaste()<cr>p
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Copy/paste to/from X clipboard buffer
+function! ClipboardYank()
+    call system('xclip -i -selection clipboard', @@)
+endfunction
+
+function! ClipboardPaste()
+    let @@ = system('xclip -o -selection clipboard')
+endfunction
+
 " Returns true if paste mode is enabled
 function! HasPaste()
     if &paste
@@ -447,11 +464,3 @@ function! VisualSelection(direction, extra_filter) range
     let @" = l:saved_reg
 endfunction
 
-" Copy/paste to/from X clipboard buffer
-function! ClipboardYank()
-    call system('xclip -i -selection clipboard', @@)
-endfunction
-
-function! ClipboardPaste()
-    let @@ = system('xclip -o -selection clipboard')
-endfunction
