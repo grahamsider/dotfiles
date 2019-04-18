@@ -36,9 +36,11 @@ alias r="ranger"
 alias c="qalc"
 alias q="qutebrowser"
 alias qp="qutebrowser --temp-basedir -s content.private_browsing true" # Private Window
+alias vis="python3 $HOME/Projects/ascii-vis/vis.py"
 eval $(thefuck --alias)
 
 alias cat="bat" # Use \cat for regular cat
+alias ls="ls --color=auto -h" # Use \ls for regular ls
 
 alias psg="ps -ef | grep"
 alias walr="cat $HOME/.cache/wal/sequences &"
@@ -49,6 +51,13 @@ alias calnext="notify-send -u normal -t 10000 -a calcurse \"[Calcurse]\" \"$(cal
 alias calall="notify-send -u normal -t 10000 -a calcurse \"[Calcurse] Appointments:\"  \"$(calcurse -a)\""
 alias clk="tty-clock -c -C $1"
 
+alias mpvq4k='mpv --ytdl-format="bestvideo[ext=mp4][height<=?2160]+bestaudio[ext=m4a] $1"'
+alias mpvq3k='mpv --ytdl-format="bestvideo[ext=mp4][height<=?2000]+bestaudio[ext=m4a] $1"'
+alias mpvq2k='mpv --ytdl-format="bestvideo[ext=mp4][height<=?1440]+bestaudio[ext=m4a] $1"'
+alias mpvq1080='mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a] $1"'
+alias mpvq720='mpv --ytdl-format="bestvideo[ext=mp4][height<=?720]+bestaudio[ext=m4a] $1"'
+alias mpvq480='mpv --ytdl-format="bestvideo[ext=mp4][height<=?480]+bestaudio[ext=m4a] $1"'
+
 ## Environment Variables ##
 
 # Go
@@ -58,6 +67,7 @@ export GOPATH
 
 # Add local binaries to path
 PATH=$PATH:$HOME/.local/bin
+PATH=$PATH:$HOME/.local/csbin
 
 # Set default editor (Nvim)
 EDITOR='nvim'
@@ -65,4 +75,4 @@ EDITOR='nvim'
 ## Other ##
 
 # Import colorscheme from wal asynchronously
-(\cat $HOME/.cache/wal/sequences &)
+ (\cat $HOME/.cache/wal/sequences &)

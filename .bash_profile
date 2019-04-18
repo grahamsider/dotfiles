@@ -19,11 +19,12 @@ export TERM=st-256color
 # Define Qsys variables (Quartus Platform Designer)
 export QSYS_ROOTDIR="/home/gs/.cache/yay/quartus-free/pkg/quartus-free/opt/altera/18.1/quartus/sopc_builder/bin"
 export QSYS_FONTSIZE=20
-QUARTUS_64BIT=1
+export QUARTUS_64BIT=1
 
-QT_AUTO_SCREEN_SCALE_FACTOR=1
-QT_QPA_PLATFORMTHEME=qt5ct
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+#export QT_DEVICE_PIXEL_RATIO=2
+export QT_QPA_PLATFORMTHEME=qt5ct
 
-PATH=$PATH:/home/gs/.local/bin
-PATH=$PATH:/opt/altera/18.1/quartus/bin
-PATH=$PATH:/opt/altera/18.1/modelsim_ase/bin
+export PATH=$PATH:/home/gs/.local/bin
+export PATH=$PATH:/opt/altera/18.1/quartus/bin
+export PATH=$PATH:/opt/altera/18.1/modelsim_ase/bin
