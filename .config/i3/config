@@ -157,29 +157,61 @@ bindsym $mod+r mode "resize"
 #        status_command i3status -c ~/.config/i3/i3status.conf
 #}
 
+#===================#
+# Xresources Colors #
+#===================#
+
+set_from_resource $black color0 #ffffff
+set_from_resource $red color1 #ffffff
+set_from_resource $green color2 #ffffff
+set_from_resource $yellow color3 #ffffff
+set_from_resource $blue color4 #ffffff
+set_from_resource $magenta color5 #ffffff
+set_from_resource $cyan color6 #ffffff
+set_from_resource $white color7 #ffffff
+set_from_resource $black_b color8 #ffffff
+set_from_resource $red_b color9 #ffffff
+set_from_resource $green_b color10 #ffffff
+set_from_resource $yellow_b color11 #ffffff
+set_from_resource $blue_b color11 #ffffff
+set_from_resource $magenta_b color11 #ffffff
+set_from_resource $cyan_b color11 #ffffff
+set_from_resource $white_b color11 #ffffff
+
 #=============#
-# ADDED RULES #
+# Added Rules #
 #=============#
 
 # Resize resolution
 # exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080
 
 # Set new windows to floating by default
-for_window [class="[.]*"] floating enable
+# for_window [class="[.]*"] floating enable
 
-# Disable title bars for i3-gaps
-for_window [class ="^.*"] border pixel 0
+# Borders
+for_window [class ="^.*"] border pixel 4
+hide_edge_borders smart
+client.focused $yellow_b $yellow_b $yellow_b $yellow_b
+client.focused_inactive $black_b $black_b $black_b $black_b
+# client.unfocused $red_b $red_b $red_b $red_b
+client.urgent $blue_b $blue_b $blue_b $blue_b
 
 # i3-gaps configuration
 gaps inner 15
 gaps outer 5
 smart_gaps on
 
-# Start compton in background as daemon process
-exec --no-startup-id compton --config $HOME/.config/compton.conf -b
+# Play boot sound
+exec --no-startup-id aplay $HOME/Music/OS/Startup/Win95/win95-boot.wav &
 
-# Setting background, creating wal pallette
-exec --no-startup-id wal -i "$HOME/Pictures/bg_curr/"
+# Start compton in background as daemon process
+# exec --no-startup-id compton --config $HOME/.config/compton.conf -b
+
+# [Feh]   Setting background
+exec --no-startup-id feh --bg-fill $HOME/Pictures/bg_curr/gruvbg_3x2.png &
+
+# [PyWal] Setting background, creating wal pallette
+# exec --no-startup-id wal -i "$HOME/Pictures/bg_curr/"
 
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/plaunch.sh
@@ -195,29 +227,32 @@ exec --no-startup-id volumeicon &
 exec --no-startup-id unclutter &
 
 # Start terminal emulator
-exec --no-startup-id st
+exec --no-startup-id startup.sh
 
 # Start xautolock
 # exec xautolock -time 10 -locker /usr/local/bin/lock.sh
 
 #================#
-# Extra bindings #
+# Extra Bindings #
 #================#
 
 # Open st as root
 bindsym $mod+Shift+Return exec st -e su root
 
-# Open file manager
+# Open dolphin
 bindsym $mod+q exec dolphin
 
+# Open internet browser
+bindsym $mod+i exec $BROWSER
+
 # Shuffle background and change color scheme via py-wal
-bindsym $mod+p exec wal -i "$HOME/Pictures/bg_curr/" 
+# bindsym $mod+p exec wal -i "$HOME/Pictures/bg_curr/" 
 
 # Swap polybar config (for applet tray)
 bindsym $mod+t exec pbar_swap.sh
 
 # Lock screen
-bindsym $mod+Escape exec glitchlock
+# bindsym $mod+Escape exec glitchlock
 
 ### Multimedia buttons ###
 
@@ -242,5 +277,4 @@ bindsym XF86AudioPrev exec playerctl previous
 # Keyboard backlight controls
 bindsym XF86KbdBrightnessUp exec_always /usr/local/bin/kb-light.py + 1
 bindsym XF86KbdBrightnessDown exec_always --no-startup-id /usr/local/bin/kb-light.py - 1
-
 

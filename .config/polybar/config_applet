@@ -11,7 +11,7 @@ compositing-border = over
 screenchange-reload = true
 
 [colors]
-background = #22000000
+background = ${xrdb:color0:#222}
 ;background = ${xrdb:color0:#222}
 ;background = ${env:color0_alpha}
 ;foreground = ${xrdb:color7:#222}
