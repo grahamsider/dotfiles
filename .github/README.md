@@ -1,31 +1,38 @@
 # Dotfiles
-Dotfiles for my Arch Linux setup.
+Arch Linux .dotfiles.
+
+Two configurations:
+    
+    - Flat
+    - Composite
 
 ## Screenshots
 
-### Floating Configuration
-![Floating Windows](https://i.imgur.com/mKdQel9.png)
-### Tiling configuration
-![Tiling Windows](https://i.imgur.com/rCA5nZ2.png)
-### dmenu (rofi)
-![dmenu](https://i.imgur.com/EqEacnE.png)
+![Flat](./scrots/flat_tiling.png "Flat - gruvbox")
+
+![Composite](./scrots/comp_tiling.png "Composite - PyWal")
 
 ## Info
 
 - Shell: `bash`
 - Window Manager: `i3-gaps`
 - File Manager: `ranger`/`dolphin`
-- Terminal: `st`
-- Compositor: `compton`
+- Terminal: `st (patched)`
+- Compositor: 
+    - Flat: `n/a`
+    - Composite: `compton`
 - Text Editor: `neovim`
 - Bar: `polybar`
 - dmenu: `rofi`
-- colorscheme: `pywal`
+- colorscheme: 
+    - Flat: `gruvbox`
+    - Composite: `pywal`
 
-Background(s) can be found [here](https://www.positrondream.com/wallpapers-all/) [1080p].
-Background in screenshots can be found [here](http://7-themes.com/data_images/out/20/6837617-low-poly.jpg) [3K].
+[Flat-Gruvbox background](http://i.imgur.com/PJbX0MG.png)
 
-Check out my [bin repo](https://github.com/grahamsider/bin) for random small scripts I've made/am in the process of making to make my life easier.
+[Composite-Pywal background](https://i.redd.it/387vx69mzkcx.jpg)
+
+Check out my [bin repo](https://github.com/grahamsider/bin) for random small scripts I'm making to make my life easier.
 
 Current configurations:
 - Huawei Matebook X Pro - Intel i7-8550U @ 4.0GHz - NVIDIA MX150 - 16GB LPDDR3 @ 2133MHz - 512GB NVMe SSD
