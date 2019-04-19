@@ -38,6 +38,8 @@ Current configurations:
 
 ![Flat](./scrots/flat_tiling.png "Flat - gruvbox")
 
+![Flat](./scrots/flat_simple.png "Tidy")
+
 ### Composite
 
 ![Composite](./scrots/comp_tiling.png "Composite - PyWal")
