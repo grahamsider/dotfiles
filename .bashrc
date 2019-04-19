@@ -75,4 +75,4 @@ EDITOR='nvim'
 ## Other ##
 
 # Import colorscheme from wal asynchronously
- (\cat $HOME/.cache/wal/sequences &)
+# (\cat $HOME/.cache/wal/sequences &)
