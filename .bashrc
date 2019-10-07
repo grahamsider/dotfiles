@@ -4,10 +4,15 @@
 
 ## Aliases ##
 
+# Commandline editing
+alias sv="set -o vi"
+alias se="set -o emacs" # Default
+
 # Nvim - (Use \vim for regular Vim)
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
+alias gtags="ctags -R -f ./.git/tags ."
 
 # Git
 alias gs='git status'
@@ -38,6 +43,9 @@ alias q="qutebrowser"
 alias qp="qutebrowser --temp-basedir -s content.private_browsing true" # Private Window
 alias vis="python3 $HOME/Projects/ascii-vis/vis.py"
 eval $(thefuck --alias)
+
+alias tetris="vitetris"
+alias ncmp="ncmpcpp"
 
 alias cat="bat" # Use \cat for regular cat
 alias ls="ls --color=auto -h" # Use \ls for regular ls
@@ -76,3 +84,9 @@ EDITOR='nvim'
 
 # Import colorscheme from wal asynchronously
 # (\cat $HOME/.cache/wal/sequences &)
+
+# PROMPT
+export PS1='\[\e]0;\w\a\]\[\e[92m\]\u@\h: \[\e[33m\]\w\[\e[0m\]\n$ '
+
+# SSH
+alias sshpi='ssh pi@192.168.0.16'
