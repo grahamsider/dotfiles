@@ -22,6 +22,43 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sets how many lines of history VIM has to remember
+set history=500
+
+" Enable line numbers on left
+set number
+
+" Enable relative line numbers
+set relativenumber
+
+" Hotkey for switching relative/normal numbers
+nmap <C-t> :set invrelativenumber<CR>
+
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" Leader
+let mapleader = ","
+let maplocalleader = ";"
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" :W sudo saves the file
+" (useful for handling the permission-denied error)
+command W w !sudo tee % > /dev/null
+
+" Ensure backspace works properly on all systems
+set backspace=indent,eol,start
+set t_kb=
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
@@ -46,7 +83,7 @@ Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 call plug#end()
 
 " Plugin related settings
-noremap <C-o> :NERDTreeToggle<CR>
+noremap <leader>o :NERDTreeToggle<CR>
 " noremap <C-p> :call YCMSemanticToggle()<CR>
 
 let g:indent_guides_start_level = 2
@@ -60,43 +97,6 @@ let g:indent_guides_guide_size = 1
 "     echo (x == 0) ? ':YCMOff' : ':YCMOn'
 " endfunction
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Sets how many lines of history VIM has to remember
-set history=500
-
-" Enable line numbers on left
-set number
-
-" Enable relative line numbers
-set relativenumber
-
-" Hotkey for switching relative/normal numbers
-nmap <C-t> :set invrelativenumber<CR>
-
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
-
-" Set to auto read when a file is changed from the outside
-set autoread
-
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ","
-let maplocalleader = ";"
-
-" Fast saving
-nmap <leader>w :w!<cr>
-
-" :W sudo saves the file
-" (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
-
-" Ensure backspace works properly on all systems
-set backspace=indent,eol,start
-set t_kb=
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -167,7 +167,6 @@ set tm=500
 if has("gui_macvim")
     autocmd GUIEnter * set vb t_vb=
 endif
-
 
 " Add a bit extra margin to the left (removed)
 set foldcolumn=0
@@ -330,7 +329,12 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
+" Remap CAPS to ESC in insert mode
+inoremap <A-k> <ESC>
+inoremap <A-j> <ESC>
+
 " Move a line of text using ALT+[jk] or Command+[jk] on mac
+
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
