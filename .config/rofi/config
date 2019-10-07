@@ -1,19 +1,41 @@
 ! rofi config
 
 rofi.color-enabled: true
-rofi.color-window: argb:df292d37, #292d37, #17a086
-rofi.color-normal: argb:00292d37, #ffffff, argb:00292d37, argb:00292d37, #17a086
-rofi.color-active: argb:00292d37, #ffffff, argb:00292d37, argb:00292d37, #ffffff
-rofi.color-urgent: argb:00292d37, #ffffff, argb:00292d37, argb:00292d37, #ffffff
+rofi.color-window: argb:11ffffff, #458588, #458588
+rofi.color-normal: argb:00ffffff, #ebdbb2, argb:00ffffff, argb:00ffffff, #458588
+rofi.color-active: argb:00ffffff, #ebdbb2, argb:00ffffff, argb:00ffffff, #ffffff
+rofi.color-urgent: argb:00ffffff, #ebdbb2, argb:00ffffff, argb:00ffffff, #ffffff
+rofi.fake-transparency: true
 
-rofi.font: Ubuntu Mono 35
+rofi.font: Hack Nerd Font Mono 33
 rofi.eh: 1
 rofi.line-margin: 18
 rofi.separator-style: solid
 rofi.hide-scrollbar: true
 rofi.lines: 4
 rofi.columns: 1
-rofi.width: 100
-rofi.padding: 1000
+rofi.width: 50
+rofi.padding: 40
 rofi.bw: 0
-rofi.auto-select: true
+rofi.auto-select: false
+
+! #define FOREGROUND #ebdbb2
+! #define BACKGROUND #282828
+! #define CURSOR     #ebdbb2
+! 
+! #define COLOR0  #282828
+! #define COLOR1  #cc241d
+! #define COLOR2  #98971a
+! #define COLOR3  #d79921
+! #define COLOR4  #458588
+! #define COLOR5  #b16286
+! #define COLOR6  #689d6a
+! #define COLOR7  #a89984
+! #define COLOR8  #928374
+! #define COLOR9  #fb4934
+! #define COLOR10 #b8bb26
+! #define COLOR11 #fabd2f
+! #define COLOR12 #83a598 
+! #define COLOR13 #d3869b 
+! #define COLOR14 #8ec07c
+! #define COLOR15 #ebdbb2
