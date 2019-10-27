@@ -86,7 +86,7 @@ EDITOR='nvim'
 # (\cat $HOME/.cache/wal/sequences &)
 
 # PROMPT
-export PS1='\[\e]0;\w\a\]\[\e[92m\]\u@\h: \[\e[33m\]\w\[\e[0m\]\n$ '
+export PS1='\[\e]0;\w\a\]\[\e[92m\]\u@\h: \[\e[33m\]\w\[\e[0m\]\n\[\e[94m\]➜ \[\e[0m\]'
 
 # SSH
 alias sshpi='ssh pi@192.168.0.16'

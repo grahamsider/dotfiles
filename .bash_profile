@@ -23,7 +23,8 @@ export QUARTUS_64BIT=1
 
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 #export QT_DEVICE_PIXEL_RATIO=2
-export QT_QPA_PLATFORMTHEME=qt5ct
+
+export XDG_MUSIC_DIR="$HOME/Music"
 
 export PATH=$PATH:/home/gs/.local/bin
 export PATH=$PATH:/opt/altera/18.1/quartus/bin

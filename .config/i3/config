@@ -196,6 +196,11 @@ client.focused_inactive $black_b $black_b $black_b $black_b
 # client.unfocused $red_b $red_b $red_b $red_b
 client.urgent $blue_b $blue_b $blue_b $blue_b
 
+## nord ##
+# client.focused  $white $white $white $white 
+# client.focused_inactive $black_b $black_b $black_b $black_b
+# client.unfocused $black_b $black_b $black_b $black_b
+
 # i3-gaps configuration
 gaps inner 15
 gaps outer 5
@@ -231,6 +236,9 @@ exec --no-startup-id startup.sh
 
 # Start xautolock
 # exec xautolock -time 10 -locker /usr/local/bin/lock.sh
+#
+# # Start low battery popup
+# exec --no-startup-id i3-battery-popup
 
 #================#
 # Extra Bindings #
