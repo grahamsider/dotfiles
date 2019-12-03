@@ -10,7 +10,6 @@ Arch Linux .files
 * Text Editor: `neovim`
 * Bar: `polybar`
 * dmenu: `rofi`
-* colorscheme: 
 
 [Wallpaper](http://i.imgur.com/PJbX0MG.png)
 
