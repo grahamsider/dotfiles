@@ -48,6 +48,10 @@ override-redirect = true
 
 [bar/top]
 monitor = "eDP-1"
+dpi = 168
+; monitor = "DP-2"
+; dpi = 96
+
 locale = en_US.UTF-8
 
 ; Settings for padded bar:
@@ -69,7 +73,6 @@ offset-y = 0
 padding-left = 0
 padding-right = 2
 
-dpi = 168
 
 font-0 = "Ubuntu Condensed:style=Regular:pixelsize=13;3"
 font-1 = "icomoon\-feather:size=11;3"

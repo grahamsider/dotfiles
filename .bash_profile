@@ -29,3 +29,5 @@ export XDG_MUSIC_DIR="$HOME/Music"
 export PATH=$PATH:/home/gs/.local/bin
 export PATH=$PATH:/opt/altera/18.1/quartus/bin
 export PATH=$PATH:/opt/altera/18.1/modelsim_ase/bin
+
+export WINEDEBUG=-all

@@ -21,6 +21,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
+
 static char *font = "Ubuntu Mono:pixelsize=24:antialias=true:autohint=true";
 static int borderpx = 18;
 
@@ -122,9 +123,9 @@ static const char *colorname[] = {
 
 	[255] = 0,
 
-    "#ffffff", /* background */
-	"#ffffff", /* foreground */
-	"#ffffff", /* cursor */
+    "#000000", /* background */
+	"#000000", /* foreground */
+	"#000000", /* cursor */
 
 	/* more colors can be added after 255 to use with DefaultXX */
 };

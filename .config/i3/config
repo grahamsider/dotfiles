@@ -182,6 +182,9 @@ set_from_resource $white_b color11 #ffffff
 # Added Rules #
 #=============#
 
+# Rounded corners
+# border_radius 4
+
 # Resize resolution
 # exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080
 
@@ -191,12 +194,17 @@ set_from_resource $white_b color11 #ffffff
 # Borders
 for_window [class ="^.*"] border pixel 4
 hide_edge_borders smart
+
+# Gruvbox
 client.focused $yellow_b $yellow_b $yellow_b $yellow_b
 client.focused_inactive $black_b $black_b $black_b $black_b
 # client.unfocused $red_b $red_b $red_b $red_b
 client.urgent $blue_b $blue_b $blue_b $blue_b
 
-## nord ##
+# Seoul256
+# client.focused $blue_b $blue_b $blue_b $blue_b 
+
+# Nord
 # client.focused  $white $white $white $white 
 # client.focused_inactive $black_b $black_b $black_b $black_b
 # client.unfocused $black_b $black_b $black_b $black_b
@@ -213,7 +221,7 @@ exec --no-startup-id aplay $HOME/Music/OS/Startup/Win95/win95-boot.wav &
 # exec --no-startup-id compton --config $HOME/.config/compton.conf -b
 
 # [Feh]   Setting background
-exec --no-startup-id feh --bg-fill $HOME/Pictures/bg_curr/gruvbg_3x2.png &
+exec --no-startup-id feh --bg-fill $HOME/Pictures/3000x2000/hex-abstract.jpg &
 
 # [PyWal] Setting background, creating wal pallette
 # exec --no-startup-id wal -i "$HOME/Pictures/bg_curr/"

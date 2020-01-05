@@ -42,6 +42,7 @@ alias c="qalc"
 alias q="qutebrowser"
 alias qp="qutebrowser --temp-basedir -s content.private_browsing true" # Private Window
 alias vis="python3 $HOME/Projects/ascii-vis/vis.py"
+alias ableton="cd $HOME/.wine/drive_c/ProgramData/Ableton/Live\ 10\ Suite/Program/ && sg no-internet \"wine ./Ableton\ Live\ 10\ Suite.exe\" & disown"
 eval $(thefuck --alias)
 
 alias tetris="vitetris"
@@ -49,6 +50,7 @@ alias ncmp="ncmpcpp"
 
 alias cat="bat" # Use \cat for regular cat
 alias ls="ls --color=auto -h" # Use \ls for regular ls
+alias ll="ls --color=auto -hal"
 
 alias psg="ps -ef | grep"
 alias walr="cat $HOME/.cache/wal/sequences &"
@@ -89,4 +91,4 @@ EDITOR='nvim'
 export PS1='\[\e]0;\w\a\]\[\e[92m\]\u@\h: \[\e[33m\]\w\[\e[0m\]\n\[\e[94m\]➜ \[\e[0m\]'
 
 # SSH
-alias sshpi='ssh pi@192.168.0.16'
+alias sshpi='ssh pi@192.168.0.25'

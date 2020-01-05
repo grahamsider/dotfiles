@@ -1,15 +1,7 @@
-#include "/home/gs/.config/xcolors/gruvbox.colors"
+#include "/home/gs/.config/xcolor/x.colors"
+#include "/home/gs/.config/xdpi/x.dpi"
 
-! DPI/Font
-Xft.dpi: 168
-Xft.autohint: 0
-Xft.antialias: 1
-Xft.hinting: true
-Xft.hintstyle: hintslight
-Xft.rgba: rgb
-Xft.lcdfilter: lcddefault
-
-! Colors
+! xcolors
 
 *.foreground:    FOREGROUND
 *.background:    BACKGROUND
