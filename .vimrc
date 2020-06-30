@@ -68,6 +68,7 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins
 Plug 'https://github.com/morhetz/gruvbox.git'
+"Plug 'https://github.com/sainnhe/gruvbox-material.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/tpope/vim-eunuch.git'
 Plug 'https://github.com/tpope/vim-surround.git'
@@ -96,6 +97,16 @@ let g:indent_guides_guide_size = 1
 "     let b:ycm_largefile = (x == 0) ? 1 : 0
 "     echo (x == 0) ? ':YCMOff' : ':YCMOn'
 " endfunction
+
+" Colorscheme
+"let g:gruvbox_material_background = 'medium'
+
+" Italics
+"let g:gruvbox_material_enable_italic = 0
+"let g:gruvbox_material_disable_italic_comment = 0
+
+" Lightline
+let g:lightline = {'colorscheme' : 'gruvbox'}
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -189,18 +200,17 @@ if &term =~ '256color'
 endif
 
 " Colorscheme
+"set termguicolors
+"set background=dark
+
 try
+    "colorscheme gruvbox-material
     colorscheme gruvbox
 catch
 endtry
 
 " Use terminal background color over colorscheme
-augroup vimrc
-    autocmd!
-    autocmd ColorScheme * hi Normal ctermbg=none
-augroup end
-
-set background=dark
+hi Normal guibg=NONE ctermbg=NONE
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -467,4 +477,3 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
-

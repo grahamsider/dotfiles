@@ -1,0 +1,92 @@
+/*
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Mail   : adi1090x@gmail.com
+ * Github : @adi1090x
+ * Reddit : @adi1090x
+ *
+ * Editor : Graham Sider (grahamsider)
+ * Mail   : grahamsider@gmail.com
+ * Github : @grahamsider
+ *
+ */
+
+configuration {
+  drun-display-format: "{icon} {name}";
+  display-drun: "Apps";
+  show-icons: true;
+  icon-theme: "Papirus";
+  location: 1;
+  yoffset: 0;
+  xoffset: 0;	
+  fake-transparency: false;
+  hide-scrollbar: true;
+  bw: 0;
+  fullscreen: false;
+  show-icons: true;
+  terminal: "st";
+  sidebar-mode: false;
+  font: "Ubuntu Condensed 20";
+}
+
+* {
+    background-color: #00000000;
+}
+
+window {
+  height: 100%;
+  width: 20%;
+  transparency: "real";
+}
+
+mainbox {
+  children: [ inputbar, listview ];
+  padding: 0% 0% 0% 0%;
+  background-color: @background;
+  border: 0;
+  border-radius: 0;
+  border-color: @background;
+}
+
+listview {
+  columns: 1;
+  padding: 0;
+  spacing: 2;
+}
+
+element {
+  border: 0;
+  text-color: @foreground;
+  orientation: vertical;
+  padding: 12 12 12 12;
+  border-radius: 0;
+}
+
+element selected {
+  background-color: @background;
+  border-color: @background;
+  text-color: @foreground;
+}
+
+inputbar {
+  children: [entry];
+  /* Top */
+  padding: 4 4 4 4;
+  /* Change this color to change style*/
+  background-color: @color0;
+  border: 0 0 0 0;
+  border-color: @foreground;
+}
+
+prompt {
+  enabled: false;
+}
+
+entry {
+  text-color: @foreground;
+  padding: 8 12 8 12;
+}
+
+@import "/home/gs/.cache/xcolor/xcolor.rasi"
+
+/* vim:ft=css

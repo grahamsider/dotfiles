@@ -1,0 +1,6 @@
+include /home/gs/.cache/xcolor/xcolor.zathura
+
+set recolor true
+set window-title-home-tilde true
+set statusbar-basename true
+set selection-clipboard clipboard

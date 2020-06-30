@@ -87,6 +87,9 @@ PATH="$PATH:$HOME/.local/csbin"
 # Set default editor (nvim)
 EDITOR='nvim'
 
+# Set WeeChat config dir
+export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
+
 ## Other ##
 
 # Import colorscheme from wal asynchronously
