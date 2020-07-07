@@ -1,0 +1,10 @@
+[Added Associations]
+application/octet-stream=org.qutebrowser.qutebrowser.desktop;
+image/png=feh.desktop;
+
+[Default Applications]
+x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
+text/html=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/about=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/unknown=org.qutebrowser.qutebrowser.desktop
