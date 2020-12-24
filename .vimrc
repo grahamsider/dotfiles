@@ -127,9 +127,9 @@ set wildmenu
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
 if has("win16") || has("win32")
-    set wildignore+=.git\*,.hg\*,.svn\*
+    set wildignore+=.hg\*,.svn\*
 else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+    set wildignore+=*/.hg/*,*/.svn/*,*/.DS_Store
 endif
 
 "Always show current position
@@ -414,6 +414,10 @@ vnoremap <silent> <leader>d d:call ClipboardYank()<cr>
 vnoremap <silent> "+p p:call ClipboardPaste()<cr>p
 vnoremap <silent> "*p p:call ClipboardPaste()<cr>p
 vnoremap <silent> <leader>p p:call ClipboardPaste()<cr>p
+
+" Allow relative ctags and .git dir ctags search up to $HOME
+set tagrelative
+set tags^=.git/tags;$HOME
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

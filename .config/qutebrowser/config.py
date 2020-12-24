@@ -28,9 +28,8 @@ c.tabs.title.alignment = "left"
 #c.tabs.indicator.width = 0
 
 # Fonts
-# Deprecated ?
-# c.fonts.monospace = "Ubuntu Mono"
-c.fonts.tabs = "10pt Ubuntu"
+c.fonts.default_size = "10pt"
+c.fonts.default_family = ["Ubuntu", "Noto Emoji"]
 
 # Allow pdf.js to view PDF files in browser
 c.content.pdfjs = True

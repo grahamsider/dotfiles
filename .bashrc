@@ -14,7 +14,7 @@ alias vi="nvim"
 alias vim="nvim"
 
 # CTags
-alias gtags="ctags -R -f ./.git/tags ."
+alias gtags="ctags -R --tag-relative -f ./.git/tags ."
 
 # Git
 alias gs='git status'
@@ -46,33 +46,38 @@ alias q="qutebrowser"
 alias qp="qutebrowser --temp-basedir -s content.private_browsing true" # Private Window
 alias clk="tty-clock -c -C $1"
 alias ascii-vis="python3 $HOME/Projects/ascii-vis/vis.py"
-alias ableton="cd $HOME/.wine/drive_c/ProgramData/Ableton/Live\ 10\ Suite/Program/ && sg no-internet \"wine ./Ableton\ Live\ 10\ Suite.exe\" & disown"
-
 alias tetris="vitetris"
 alias ncmp="ncmpcpp"
 
 alias calnext="notify-send -u normal -t 10000 -a calcurse \"[Calcurse]\" \"$(calcurse --next)\""
 alias calall="notify-send -u normal -t 10000 -a calcurse \"[Calcurse] Appointments:\"  \"$(calcurse -a)\""
 
+# Wine
+alias ableton="cd $HOME/.wine/drive_c/ProgramData/Ableton/Live\ 10\ Suite/Program/ && sg no-internet \"wine ./Ableton\ Live\ 10\ Suite.exe\" & disown"
+alias ltspice="wine $HOME/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe"
+alias adobe-de="wine $HOME/.wine/drive_c/Program\ Files\ \(x86\)/Adobe/Adobe\ Digital\ Editions/digitaleditions.exe"
+
 # MPV
-alias mpvq4k='mpv --ytdl-format="bestvideo[ext=mp4][height<=?2160]+bestaudio[ext=m4a]"'
-alias mpvq3k='mpv --ytdl-format="bestvideo[ext=mp4][height<=?2000]+bestaudio[ext=m4a]"'
-alias mpvq2k='mpv --ytdl-format="bestvideo[ext=mp4][height<=?1440]+bestaudio[ext=m4a]"'
-alias mpvq1080='mpv --ytdl-format="bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]"'
-alias mpvq720='mpv --ytdl-format="bestvideo[ext=mp4][height<=?720]+bestaudio[ext=m4a]"'
-alias mpvq480='mpv --ytdl-format="bestvideo[ext=mp4][height<=?480]+bestaudio[ext=m4a]"'
+alias mpvq4k='mpv --ytdl-format="bestvideo[height<=?2160]+bestaudio/best"'
+alias mpvq3k='mpv --ytdl-format="bestvideo[height<=?2000]+bestaudio/best"'
+alias mpvq2k='mpv --ytdl-format="bestvideo[height<=?1440]+bestaudio/best"'
+alias mpvq1080='mpv --ytdl-format="bestvideo[height<=?1080]+bestaudio/best"'
+alias mpvq720='mpv --ytdl-format="bestvideo[height<=?720]+bestaudio/best"'
+alias mpvq480='mpv --ytdl-format="bestvideo[height<=?480]+bestaudio/best"'
 
 # Pacman
 alias pm-update-mirrors='cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup && reflector --country Canada --latest 5 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
 
 # Utils
-alias cat="bat"                  # Use \cat for regular cat
-alias ls="ls --color=auto -h"    # Use \ls for regular ls
+alias dog="bat"
+alias ls="ls --color=auto -h"
 alias ll="ls --color=auto -hal"
 
 alias psg="ps -ef | grep"
 alias localip="hostname -i"
 alias scs="systemctl status"
+alias de="disown && exit"
+alias d="disown"
 
 ## Environment Variables ##
 
@@ -101,4 +106,7 @@ export PS1='\[\e]0;\w\a\]\[\e[92m\]\u@\h: \[\e[33m\]\w\[\e[0m\]\n\[\e[94m\]➜ \
 # SSH / Pi / Backup
 export GSPI="pi@192.168.0.25"
 alias sshpi="ssh $GSPI"
+alias sshug="ssh sidergra@ug71.eecg.utoronto.ca"
+alias sshecf="ssh sidergra@remote.ecf.utoronto.ca"
+alias sshclp="ssh capstoneclp.com"
 alias pi-backup="rsync -aP --exclude-from=$HOME/.rsyncignore $HOME $GSPI:/mnt/backups/$HOSTNAME$HOME"

@@ -1,0 +1,129 @@
+/*
+ *
+ * Author  : Aditya Shakya
+ * Mail    : adi1090x@gmail.com
+ * Github  : @adi1090x
+ * Twitter : @adi1090x
+ *
+ */
+
+configuration {
+    font:                           "Ubuntu Condensed 16";
+    show-icons:                     true;
+    icon-theme:                     "Papirus";
+    display-drun:                   "";
+    drun-display-format:            "{name}";
+    disable-history:                false;
+    fullscreen:                     false;
+    hide-scrollbar:                 true;
+    sidebar-mode:                   false;
+}
+
+* {
+    bg:                             @color7;
+    bg-alt:                         @color0;
+    bg-bar:                         @color15;
+    fg:                             @foreground;
+    accent:                         @color8;
+    border-blue:                    @color4;
+    border-yellow:                  @color3;
+    selected:                       @color15;
+    trans:                          #FFFFFFFF;
+}
+
+window {
+    transparency:                   "real";
+    background-color:               @bg;
+    text-color:                     @fg;
+    border:                         0px 6px 0px 0px;
+    border-color:                   @accent;
+    border-radius:                  0px;
+    height:                         100%;
+    width:                          9%;
+    location:                       west;
+    x-offset:                       0px;
+    y-offset:                       52px;
+}
+
+prompt {
+    enabled:                        true;
+    padding:                        0% 0.75% 0% -1%;
+    background-color:               @bg-alt;
+    text-color:                     @fg;
+    font:                           "FantasqueSansMono Nerd Font 12";
+}
+
+entry {
+    background-color:               @bg-bar;
+    text-color:                     @bg-alt;
+    placeholder-color:              @accent;
+    expand:                         true;
+    horizontal-align:               0;
+    placeholder:                    "Search";
+    padding:                        -0.10% 0% 0% 0%;
+    blink:                          true;
+}
+
+inputbar {
+    children:                       [ prompt, entry ];
+    background-color:               @bg-bar;
+    text-color:                     @fg;
+    expand:                         false;
+    border:                         0% 0% 0.3% 0%;
+    border-radius:                  5px;
+    border-color:                   @accent;
+    margin:                         0% 0% 0% 0%;
+    padding:                        1.25%;
+}
+
+listview {
+    background-color:               @bg-alt;
+    columns:                        1;
+    spacing:                        0%;
+    cycle:                          false;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @bg-alt;
+    border:                         0% 0% 0% 0%;
+    border-radius:                  0% 0% 0% 0%;
+    border-color:                   @accent;
+    children:                       [ inputbar, listview ];
+    spacing:                        1.25%;
+    padding:                        3.5% 0.75% 0% 0.75%;
+}
+
+element {
+    background-color:               @bg-alt;
+    text-color:                     @fg;
+    orientation:                    vertical;
+    border-radius:                  0%;
+    padding:                        2.25% 0% 2.25% 0%;
+}
+
+element-icon {
+    size:                           64px;
+    border:                         0px;
+}
+
+element-text {
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    margin:                         0.5% 0.5% -0.5% 0.5%;
+}
+
+element selected {
+    background-color:               @selected;
+    text-color:                     @fg;
+    border:                         0% 0% 0.3% 0%;
+    border-radius:                  5px;
+    border-color:                   @border-blue;
+}
+
+
+@import "/home/gs/.cache/xcolor/xcolor.rasi"
+
+/* vim:ft=css
