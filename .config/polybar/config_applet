@@ -47,7 +47,11 @@ override-redirect = true
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [bar/top]
-monitor = "eDP-1"
+; monitor = "eDP1"
+; dpi = 168
+monitor = "eDP1"
+dpi = 168
+
 locale = en_US.UTF-8
 
 ; Settings for padded bar:
@@ -55,6 +59,7 @@ locale = en_US.UTF-8
 ;border-left-size = 20
 
 width = 100%
+; height = 52
 height = 52
 border-size = 0
 border-top-size = 0
@@ -69,7 +74,6 @@ offset-y = 0
 padding-left = 0
 padding-right = 2
 
-dpi = 168
 
 font-0 = "Ubuntu Condensed:style=Regular:pixelsize=13;3"
 font-1 = "icomoon\-feather:size=11;3"
@@ -88,10 +92,10 @@ modules-right = volume backlight battery network powermenu
 tray-position = left
 tray-detached = true
 tray-maxsize = 16
-tray-transparent = true
 tray-background = ${colors.background}
 tray-offset-x = 0
-tray-offset-y = 1950
+; tray-offset-y = 1950
+tray-offset-y = 1405
 tray-padding = 4
 tray-scale = 1.0
 
