@@ -67,18 +67,20 @@ set t_kb=
 call plug#begin('~/.vim/plugged')
 
 " Plugins
-Plug 'https://github.com/morhetz/gruvbox.git'
-"Plug 'https://github.com/sainnhe/gruvbox-material.git'
-Plug 'https://github.com/scrooloose/nerdtree.git'
-Plug 'https://github.com/tpope/vim-eunuch.git'
-Plug 'https://github.com/tpope/vim-surround.git'
-Plug 'https://github.com/terryma/vim-multiple-cursors.git'
-Plug 'https://github.com/itchyny/lightline.vim.git'
-Plug 'https://github.com/lervag/vimtex.git'
-Plug 'https://github.com/tpope/vim-commentary.git'
-Plug 'https://github.com/junegunn/fzf.vim.git'
-" Plug 'https://github.com/Valloric/YouCompleteMe.git'
-Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
+Plug 'morhetz/gruvbox'
+"Plug 'sainnhe/gruvbox-material.git'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'itchyny/lightline.vim'
+Plug 'lervag/vimtex'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf.vim'
+" Plug 'https://github.com/Valloric/YouCompleteMe'
+Plug 'https://github.com/nathanaelkane/vim-indent-guides'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'tikhomirov/vim-glsl'
 
 " Initializes plugin system
 call plug#end()
@@ -107,6 +109,9 @@ let g:indent_guides_guide_size = 1
 
 " Lightline
 let g:lightline = {'colorscheme' : 'gruvbox'}
+
+" GLSL Syntax Highlightin
+autocmd! BufNewFile,BufRead *.vs,*.fs,*.tcs,*.tes set ft=glsl
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -181,6 +186,12 @@ endif
 
 " Add a bit extra margin to the left (removed)
 set foldcolumn=0
+
+" Map code block jumping to a saner search method
+map [[ ?{<CR>w99[{
+map ][ /}<CR>b99]}
+map ]] j0[[%/{<CR>
+map [] k$][%?}<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
