@@ -14,7 +14,8 @@ alias vi="nvim"
 alias vim="nvim"
 
 # CTags
-alias gtags="ctags -R --tag-relative -f ./.git/tags ."
+alias gtags="ctags -R --tag-relative -f ./.git/tags ." # Git Tags
+alias dtags="ctags -R --tag-relative -f ./tags ."      # Dir Tags
 
 # Git
 alias gs='git status'
@@ -66,7 +67,7 @@ alias mpvq720='mpv --ytdl-format="bestvideo[height<=?720]+bestaudio/best"'
 alias mpvq480='mpv --ytdl-format="bestvideo[height<=?480]+bestaudio/best"'
 
 # Pacman
-alias pm-update-mirrors='cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup && reflector --country Canada --latest 5 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
+alias pm-update-mirrors='sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup && sudo reflector --country Canada --latest 5 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
 
 # Utils
 alias dog="bat"
