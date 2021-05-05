@@ -1,0 +1,19 @@
+! Current config: laptop
+
+! DPI
+
+Xft.dpi: 168
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+
+! Font
+
+*.font: Ubuntu Mono:pixelsize=24:antialias=true:autohint=true:dpi=168
+
+! Border
+
+*.borderpx: 18

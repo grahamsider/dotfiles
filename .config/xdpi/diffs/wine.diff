@@ -1,0 +1,19 @@
+# /home/gs/.wine/user.reg
+
+< "LogPixels"=dword:[0-9A-Za-z]*
+
+--- ^ laptop
+> "LogPixels"=dword:000000a8
+--- $ laptop
+
+--- ^ uw
+> "LogPixels"=dword:00000060
+--- $ uw
+
+--- ^ 1080p
+> "LogPixels"=dword:00000060
+--- $ 1080p
+
+--- ^ lt-1080p
+> "LogPixels"=dword:00000060
+--- $ lt-1080p

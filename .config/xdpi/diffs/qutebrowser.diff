@@ -1,0 +1,19 @@
+# /home/gs/.config/qutebrowser/config.py
+
+< c.fonts.default_size = "[0-9]*pt"
+
+--- ^ laptop
+> c.fonts.default_size = "10pt"
+--- $ laptop
+
+--- ^ uw
+> c.fonts.default_size = "12pt"
+--- $ uw
+
+--- ^ 1080p
+> c.fonts.default_size = "10pt"
+--- $ 1080p
+
+--- ^ lt-1080p
+> c.fonts.default_size = "10pt"
+--- $ lt-1080p

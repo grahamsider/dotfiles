@@ -1,0 +1,17 @@
+! DPI
+
+Xft.dpi: 96
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+
+! Font
+
+*.font: Ubuntu Mono:pixelsize=16:antialias=true:autohint=true:dpi=96
+
+! Border
+
+*.borderpx: 18

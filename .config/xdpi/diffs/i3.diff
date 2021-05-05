@@ -1,0 +1,9 @@
+# /home/gs/.config/i3/config
+
+< set-sink-volume [0-9]*
+< set-sink-mute [0-9]*
+
+--- ^ *
+> set-sink-volume 89
+> set-sink-mute 89
+--- $ *

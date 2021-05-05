@@ -1,0 +1,34 @@
+# /home/gs/.config/rofi/column.rasi
+
+< font:\s*"Ubuntu Condensed [0-9][0-9]*"
+< width:\s*[0-9][0-9]*%
+< y-offset:\s*[0-9][0-9]*px
+< size:\s*[0-9][0-9]*px
+
+--- ^ laptop
+> font:                           "Ubuntu Condensed 16"
+> width:                          9%
+> y-offset:                       52px
+> size:                           64px
+--- $ laptop
+
+--- ^ uw
+> font:                           "Ubuntu Condensed 10"
+> width:                          6%
+> y-offset:                       38px
+> size:                           48px
+--- $ uw
+
+--- ^ 1080p
+> font:                           "Ubuntu Condensed 10"
+> width:                          6%
+> y-offset:                       38px
+> size:                           48px
+--- $ 1080p
+
+--- ^ lt-1080p
+> font:                           "Ubuntu Condensed 10"
+> width:                          6%
+> y-offset:                       38px
+> size:                           48px
+--- $ lt-1080p
