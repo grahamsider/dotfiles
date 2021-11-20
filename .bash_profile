@@ -29,3 +29,4 @@ export PATH=$PATH:/opt/altera/18.1/quartus/bin
 export PATH=$PATH:/opt/altera/18.1/modelsim_ase/bin
 
 export WINEDEBUG=-all
+export WINEDLLOVERRIDES="mscoree=d;mshtml=d"
