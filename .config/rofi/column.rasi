@@ -14,8 +14,6 @@ configuration {
     display-drun:                   "";
     drun-display-format:            "{name}";
     disable-history:                false;
-    fullscreen:                     false;
-    hide-scrollbar:                 true;
     sidebar-mode:                   false;
 }
 
@@ -46,7 +44,7 @@ window {
 }
 
 prompt {
-    enabled:                        true;
+    enabled:                        false;
     padding:                        0% 0.75% 0% -1%;
     background-color:               @bg-alt;
     text-color:                     @fg;
@@ -60,7 +58,7 @@ entry {
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Search";
-    padding:                        -0.10% 0% 0% 0%;
+    padding:                        0% 0% 0% 0%;
     blink:                          true;
 }
 
@@ -73,7 +71,7 @@ inputbar {
     border-radius:                  5px;
     border-color:                   @accent;
     margin:                         0% 0% 0% 0%;
-    padding:                        1.25%;
+    padding:                        1% 1% 1% 0.60%;
 }
 
 listview {
@@ -104,11 +102,17 @@ element {
 }
 
 element-icon {
+    background-color:               inherit;
+    text-color:                     inherit;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
     size:                           64px;
     border:                         0px;
 }
 
 element-text {
+    background-color:               inherit;
+    text-color:                     inherit;
     expand:                         true;
     horizontal-align:               0.5;
     vertical-align:                 0.5;
