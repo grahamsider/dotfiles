@@ -1,30 +1,31 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer:
+" Template Creator:
 "       Amir Salihefendic — @amix3k
-" Modifications:
+" Maintainer:
 "       Graham Sider — @grahamsider
 "
 " Sections:
-"    -> Plugins
 "    -> General
-"    -> VIM user interface
+"    -> Plugin Initialization
+"    -> Plugin Settings
+"    -> Vim UI
 "    -> Colors and Fonts
-"    -> Files and backups
-"    -> Text, tab and indent related
-"    -> Visual mode related
-"    -> Moving around, tabs and buffers
-"    -> Status line
-"    -> Editing mappings
-"    -> vimgrep searching and cope displaying
-"    -> Spell checking
+"    -> Files & Backups
+"    -> Text, Tab, Indent
+"    -> Visual Mode
+"    -> Movement, Tab Management, Windows
+"    -> Default Status Line
+"    -> Mapping Edits
+"    -> Spell Checking
 "    -> Misc
-"    -> Helper functions
+"    -> Helper Functions
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Sets how many lines of history VIM has to remember
 set history=500
 
@@ -61,62 +62,82 @@ set t_kb=
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugins
+" => Plugin Initialization
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Specifies plugin directory
 call plug#begin('~/.vim/plugged')
 
 " Plugins
 Plug 'morhetz/gruvbox'
-"Plug 'sainnhe/gruvbox-material.git'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'itchyny/lightline.vim'
-Plug 'lervag/vimtex'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'edkolev/tmuxline.vim'
+Plug 'embear/vim-localvimrc'
+
+" Disabled plugins
+" Plug 'sainnhe/gruvbox-material.git'
+" Plug 'lervag/vimtex'
 " Plug 'https://github.com/Valloric/YouCompleteMe'
-Plug 'https://github.com/nathanaelkane/vim-indent-guides'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'tikhomirov/vim-glsl'
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'tikhomirov/vim-glsl'
 
 " Initializes plugin system
 call plug#end()
 
-" Plugin related settings
-noremap <leader>o :NERDTreeToggle<CR>
-" noremap <C-p> :call YCMSemanticToggle()<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin Settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" NerdTree
+noremap <leader>o :NERDTreeToggle<CR>
+
+" Vim Indent Guides
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
-" let g:ycm_show_diagnostics_ui = 0
 
-" Turn YCM semantics on/off on the fly (hack)
-" function! YCMSemanticToggle()
-"     let x = b:ycm_largefile
-"     let b:ycm_largefile = (x == 0) ? 1 : 0
-"     echo (x == 0) ? ':YCMOff' : ':YCMOn'
-" endfunction
-
-" Colorscheme
-"let g:gruvbox_material_background = 'medium'
-
-" Italics
-"let g:gruvbox_material_enable_italic = 0
-"let g:gruvbox_material_disable_italic_comment = 0
+" Gruvbox Material (Disabled)
+" let g:gruvbox_material_background = 'medium'
+" let g:gruvbox_material_enable_italic = 0
+" let g:gruvbox_material_disable_italic_comment = 0
 
 " Lightline
 let g:lightline = {'colorscheme' : 'gruvbox'}
 
-" GLSL Syntax Highlightin
+" Auto GLSL Syntax Highlighting
 autocmd! BufNewFile,BufRead *.vs,*.fs,*.tcs,*.tes set ft=glsl
 
+" CScope
+function! LoadCscope()
+	let db = findfile("cscope.out", ".;")
+	if (!empty(db))
+		let path = strpart(db, 0, match(db, "/cscope.out$"))
+		set nocscopeverbose " suppress 'duplicate connection' error
+		exe "cs add " . db . " " . path
+		set cscopeverbose
+	" else add the database pointed to by environment variable 
+   elseif $CSCOPE_DB != "" 
+		cs add $CSCOPE_DB
+	endif
+endfunction
+au BufEnter /* call LoadCscope()
+
+map <leader>cr :cs reset<cr>
+
+" Tmuxline
+let g:tmuxline_powerline_separators = 0
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VIM user interface
+" => Vim UI
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
@@ -197,6 +218,7 @@ map [] k$][%?}<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Enable syntax highlighting
 syntax enable
 
@@ -211,12 +233,15 @@ if &term =~ '256color'
 endif
 
 " Colorscheme
-"set termguicolors
-"set background=dark
+set background=dark
 
+" Sometimes needed to resolve term/screen errors
+" set termguicolors
+
+" Current theme: gruvbox (disabled: gruvbox-material)
 try
-    "colorscheme gruvbox-material
     colorscheme gruvbox
+    " colorscheme gruvbox-material
 catch
 endtry
 
@@ -239,17 +264,19 @@ set ffs=unix,dos,mac
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups and undo
+" => Files & Backups
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
+
+" Turn backup/swapfile off
 set nobackup
 set nowb
 set noswapfile
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
+" => Text, Tab, Indent
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Use spaces instead of tabs
 set expandtab
 
@@ -264,14 +291,15 @@ set tabstop=4
 set lbr
 set tw=500
 
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
+set ai   " Auto indent
+set si   " Smart indent
+set wrap " Wrap lines
 
 
 """"""""""""""""""""""""""""""
-" => Visual mode related
+" => Visual Mode
 """"""""""""""""""""""""""""""
+
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
@@ -279,8 +307,9 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Moving around, tabs, windows and buffers
+" => Movement, Tab Management, Windows
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
 map <c-space> ?
@@ -335,8 +364,9 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 
 """"""""""""""""""""""""""""""
-" => Status line
+" => Default Status Line
 """"""""""""""""""""""""""""""
+
 " Always show the status line
 set laststatus=2
 
@@ -345,8 +375,9 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Editing mappings
+" => Mapping Edits
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
@@ -386,8 +417,9 @@ endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Spell checking
+" => Spell Checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
@@ -401,6 +433,7 @@ map <leader>s? z=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
@@ -432,8 +465,9 @@ set tags^=.git/tags;$HOME
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Helper functions
+" => Helper Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Copy/paste to/from X clipboard buffer
 function! ClipboardYank()
     call system('xclip -i -selection clipboard', @@)
