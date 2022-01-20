@@ -7,11 +7,6 @@
 ;    ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
                                                        
 [settings]
-; Throttle settings
-throttle-output = 5
-throttle-output-for = 10
-throttle-input-for = 30
-
 ; Compositing operators
 compositing-background = over
 compositing-foreground = over
@@ -72,7 +67,7 @@ padding-left = 0
 padding-right = 2
 
 font-0 = "Ubuntu Condensed:style=Regular:pixelsize=13;3"
-font-1 = "icomoon\-feather:size=11;3"
+font-1 = "icomoon\\-feather:size=11;3"
 
 background = ${colors.background}
 foreground = ${colors.foreground}

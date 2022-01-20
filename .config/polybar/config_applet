@@ -7,11 +7,6 @@
 ;    ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 
 [settings]
-; Throttle settings
-throttle-output = 5
-throttle-output-for = 10
-throttle-input-for = 30
-
 ; Compositing operators
 compositing-background = over
 compositing-foreground = over
@@ -89,13 +84,12 @@ modules-center = date
 modules-right = volume backlight battery network powermenu
 
 ; Tray
-tray-position = left
+tray-position = right
 tray-detached = true
 tray-maxsize = 16
 tray-background = ${colors.background}
-tray-offset-x = 0
-; tray-offset-y = 1950
-tray-offset-y = 1405
+tray-offset-x = -1000
+tray-offset-y = 0
 tray-padding = 4
 tray-scale = 1.0
 
