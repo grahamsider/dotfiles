@@ -255,8 +255,8 @@ exec --no-startup-id startup.sh
 # Open st as root
 bindsym $mod+Shift+Return exec st -e su root
 
-# Open dolphin
-bindsym $mod+q exec dolphin
+# Open pcmanfm
+bindsym $mod+q exec pcmanfm
 
 # Open internet browser
 bindsym $mod+i exec $BROWSER
