@@ -1,12 +1,15 @@
 [Added Associations]
-application/octet-stream=org.qutebrowser.qutebrowser.desktop;
-image/png=feh.desktop;
+application/octet-stream=org.pwmt.zathura.desktop;firefox.desktop;
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+image/png=feh.desktop;
+image/jpeg=feh.desktop;
+text/x-python=nvim.desktop;
+text/plain=nvim.desktop;
 
 [Default Applications]
-x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
-x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
-text/html=org.qutebrowser.qutebrowser.desktop
-x-scheme-handler/about=org.qutebrowser.qutebrowser.desktop
-x-scheme-handler/unknown=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/about=firefox.desktop
+x-scheme-handler/unknown=firefox.desktop
 x-scheme-handler/msteams=teams.desktop
+text/html=firefox.desktop
