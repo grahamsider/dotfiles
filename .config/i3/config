@@ -242,9 +242,9 @@ exec --no-startup-id unclutter &
 # Start terminal emulator
 exec --no-startup-id startup.sh
 
-# Start xautolock
-# exec xautolock -time 10 -locker /usr/local/bin/lock.sh
-#
+# Start auto lock
+exec --no-startup-id xss-lock /usr/local/bin/ixlock3
+
 # # Start low battery popup
 # exec --no-startup-id i3-battery-popup
 
@@ -277,7 +277,7 @@ bindsym $mod+Mod1+3 exec /usr/local/bin/xdpi -s lt-1080p
 bindsym $mod+Mod1+4 exec /usr/local/bin/xdpi -s lt-1080p-mon
 
 # Lock screen
-# bindsym $mod+Escape exec glitchlock
+bindsym $mod+Escape exec /usr/local/bin/ixlock3
 
 ### Multimedia buttons ###
 
